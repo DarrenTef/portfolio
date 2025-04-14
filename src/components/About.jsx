@@ -7,10 +7,12 @@ import { aboutData, aboutText, downloadIcon, arrowLeftIcon } from "@/assests";
 const About = () => {
   return (
     <div className="min-h-screen px-96 flex-col items-center justify-center">
-      <Heading text={"About Me"} />
+      <div className="flex justify-center">
+        <Heading text={"About Me"} />
+      </div>
       <div className="w-full flex items-center justify-between md:justify-center">
         <Image
-          src={"/about-me.png"}
+          src={"/about.png"}
           alt="About Image"
           width={400}
           height={400}

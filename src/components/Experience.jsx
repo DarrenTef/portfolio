@@ -18,13 +18,15 @@ const Experience = () => {
 
   return (
     <div className="relative py-20 px-96">
-      <Heading text={"Experience & Education"} />
+      <div className="flex justify-center">
+        <Heading text={"Experience & Education"} />
+      </div>
       <Image
         src={"/education.png"}
         alt={"Illustration showing experience and education"}
         width={400}
         height={400}
-        className="absolute -top-4 right-96 opacity-70 hidden lg:block"
+        className="absolute -top-24 right-96 opacity-100 hidden lg:block"
       />
       <div
         ref={containerRef}
@@ -90,7 +92,7 @@ const Experience = () => {
         <motion.div
           initial={{ scaleY: 0 }}
           style={{ scaleY: scrollY }}
-          className="absolute w-1 h-full rounded-full bg-gray-300 origin-top"
+          className="absolute top-35 w-1 h-full rounded-full bg-gray-300 origin-top"
         ></motion.div>
       </div>
     </div>

@@ -45,12 +45,12 @@ const Hero = () => {
             transition: '0.1s',
             }}
             >  
-            <Image src={'/person.png'}
+            <Image src={'/heroPage.png'}
             alt='Person Image' 
             width={400} 
             height={400} 
             priority={true}
-            className='h-auto w-[150px]'
+            className='h-auto w-[300px]'
             />
             <motion.span 
               className='absolute text-3xl font-semibold text-white' 
