@@ -21,7 +21,11 @@ const Experience = () => {
         {experienceData.map((data, i) => (
           <div
             key={`id-${i}`}
-            className="w-[600px] xl:w-[480px] sm:w-full px-12 sm:px-0 relative -left-[300px]"
+            className={`w-[600px] xl:w-[480px] sm:w-full px-12 sm:px-0 relative ${
+              i % 2 == 0
+                ? "-left-[400px] xl:-left-[300px] lg:-left-0"
+                : "left-[400px] xl:left-[300px] lg:left-0"
+            }`}
           >
             <div className=" relative flex flex-col gap-y-3 rounded-md border border-red-300 bg-white p-4 tracking-wide sm:text-sm">
               <h1 className="text-xl sm:text-lg font-light text-gray-700">
@@ -37,16 +41,29 @@ const Experience = () => {
                 <span className="font-light">Experience:</span>
                 <ul className="pl-2">
                   {data.experience.map((exp, j) => (
-                      <li key={j} className="my-1 font-extralight">{exp}</li>
+                    <li key={j} className="my-1 font-extralight">
+                      {exp}
+                    </li>
                   ))}
                 </ul>
               </div>
               {/* The 2020 Div and Icon span are modified on my own */}
-              <span className="absolute top-20 -right-6 text-red-300">
+              <span
+                className={`absolute top-20 text-red-300 -translate-y-1/2 ${
+                  i % 2 == 0 ? "left-full rotate-180" : "right-full"
+                }`}
+              >
                 {arrowLeftIcon}
               </span>
             </div>
-            <div className="w-14 absolute top-17 left-[calc(100%+70px)] border border-gray-300 rounded-full aspect-square grid place-items-center text-red-400 font-light">
+            <div
+              className={`w-14 absolute top-20 border border-gray-300 rounded-full aspect-square
+                 grid place-items-center text-red-400 font-light -translate-y-1/2 z-10 bg-white ${
+                   i % 2 === 0
+                     ? "left-[calc(100%+100px)] lg:left-[106.5%]"
+                     : "right-[calc(100%+100px)] lg:right-[106.5%]"
+                 }`}
+            >
               {date - experienceData.length + i + 1}
             </div>
           </div>
