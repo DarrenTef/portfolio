@@ -51,7 +51,7 @@ export const downloadIcon = <DownloadLineIcon />
 export const arrowLeftIcon = <ArrowLeftSFillIcon />
 
 export const aboutText =
-  " Hi, I'm Nick, a web developer & designer. I blend the technical  skills of web development with the creative aspects of web design. I code in HTML, CSS, JavaScript, React, NextJS... to build functional and responsive websites, while also using design tools like Photoshop and Figma to create visually appealing and user-friendly  interfaces. My role allows me to ensure that websites not only work well but also look great and provide an excellent user experience."
+  " Hi, I’m Darren, a software developer with a focus on full-stack and mobile app development. I work with tools like React Native, Firebase, and Node.js to build responsive apps and clean UIs. Whether I’m building OCR-powered features or teaching kids how to code, I enjoy turning ideas into real, working products with thoughtful design and functionality.";
 // End of About Me
 
 // Experience

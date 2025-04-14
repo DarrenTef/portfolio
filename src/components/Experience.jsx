@@ -1,12 +1,21 @@
-"use client"
+"use client";
 
-import Heading from "./sub/Heading"
-import Image from "next/image"
-import { experienceData } from "@/assests"
-import { arrowLeftIcon } from "@/assests"
+import Heading from "./sub/Heading";
+import Image from "next/image";
+import { experienceData } from "@/assests";
+import { arrowLeftIcon } from "@/assests";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { useRef } from "react";
 
 const Experience = () => {
-  const date = new Date().getFullYear()
+  const date = new Date().getFullYear();
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 95%", "end end"],
+  });
+  const scrollY = useSpring(scrollYProgress, { stiffness: 200, damping: 20 });
+
   return (
     <div className="relative py-20 px-96">
       <Heading text={"Experience & Education"} />
@@ -17,17 +26,26 @@ const Experience = () => {
         height={400}
         className="absolute -top-4 right-96 opacity-70 hidden lg:block"
       />
-      <div className="w-full h-full flex flex-col items-center justify-center gap-y-10 lg:gap-y-20 py-10">
+      <div
+        ref={containerRef}
+        className="w-full h-full flex flex-col items-center justify-center gap-y-10 lg:gap-y-20 py-10"
+      >
         {experienceData.map((data, i) => (
           <div
             key={`id-${i}`}
-            className={`w-[600px] xl:w-[480px] sm:w-full px-12 sm:px-0 relative ${
+            className={`w-[600px] xl:w-[480px] sm:w-full px-12 sm:px-0 relative z-10 ${
               i % 2 == 0
                 ? "-left-[400px] xl:-left-[300px] lg:-left-0"
                 : "left-[400px] xl:left-[300px] lg:left-0"
             }`}
           >
-            <div className=" relative flex flex-col gap-y-3 rounded-md border border-red-300 bg-white p-4 tracking-wide sm:text-sm">
+            <motion.div
+              initial={{ opacity: 0, x: i % 2 === 0 ? -80 : 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, type: "spring", stiffness: 50 }}
+              viewport={{ once: true }}
+              className=" relative flex flex-col gap-y-3 rounded-md border border-red-300 bg-white p-4 tracking-wide sm:text-sm"
+            >
               <h1 className="text-xl sm:text-lg font-light text-gray-700">
                 {data.title}
               </h1>
@@ -55,7 +73,7 @@ const Experience = () => {
               >
                 {arrowLeftIcon}
               </span>
-            </div>
+            </motion.div>
             <div
               className={`w-14 absolute top-20 border border-gray-300 rounded-full aspect-square
                  grid place-items-center text-red-400 font-light -translate-y-1/2 z-10 bg-white ${
@@ -69,10 +87,14 @@ const Experience = () => {
           </div>
         ))}
 
-        <div className="absolute w-1 h-full rounded-full bg-gray-300"></div>
+        <motion.div
+          initial={{ scaleY: 0 }}
+          style={{ scaleY: scrollY }}
+          className="absolute w-1 h-full rounded-full bg-gray-300 origin-top"
+        ></motion.div>
       </div>
     </div>
   );
-}
+};
 
-export default Experience
+export default Experience;

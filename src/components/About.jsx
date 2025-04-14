@@ -1,8 +1,8 @@
-"use client"
-import Heading from "./sub/Heading"
-import Image from "next/image"
-import Achievements from "./sub/Achievements"
-import { aboutData, aboutText, downloadIcon, arrowLeftIcon } from "@/assests"
+"use client";
+import Heading from "./sub/Heading";
+import Image from "next/image";
+import Achievements from "./sub/Achievements";
+import { aboutData, aboutText, downloadIcon, arrowLeftIcon } from "@/assests";
 
 const About = () => {
   return (
@@ -37,12 +37,12 @@ const About = () => {
       <div className="mt-20 w-full flex flex-wrap items-center justify-between gap-x-7 gap-y-10">
         {aboutData.map((item, i) => (
           <Achievements key={i} title={item.title} amount={item.amount}>
-           {item.icon} 
+            {item.icon}
           </Achievements>
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default About
+export default About;
