@@ -1,91 +1,116 @@
-"use client"
-import Image from 'next/image'
-import { heroIcons } from '@/assests'
-import { useMotionValue, useTransform, motion, useSpring, delay } from 'framer-motion'
-import { useState } from 'react'
+"use client";
+import Image from "next/image";
+import { heroIcons } from "@/assests";
+import {
+  useMotionValue,
+  useTransform,
+  motion,
+  useSpring,
+  delay,
+} from "framer-motion";
+import { useState } from "react";
 
 const Hero = () => {
-  const [windowOffset, setWindowOffset] = useState({ innerWidth:0, innerHeight:0 })
-  const [mouseMove, setMouseMove] = useState(false)
-  const [buttonHover, setButtonHover] = useState(false)
+  const [windowOffset, setWindowOffset] = useState({
+    innerWidth: 0,
+    innerHeight: 0,
+  });
+  const [mouseMove, setMouseMove] = useState(false);
+  const [buttonHover, setButtonHover] = useState(false);
 
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
   const handleMouseMove = (e) => {
-    const { clientX, clientY } = e
-    x.set(clientX)
-    y.set(clientY)
-  }
+    const { clientX, clientY } = e;
+    x.set(clientX);
+    y.set(clientY);
+  };
 
   const handleMouseEnter = () => {
-    setWindowOffset({ innerWidth: window.innerWidth, innerHeight: window.innerHeight })
-    setMouseMove(true)
-  }
+    setWindowOffset({
+      innerWidth: window.innerWidth,
+      innerHeight: window.innerHeight,
+    });
+    setMouseMove(true);
+  };
 
-  const { innerWidth, innerHeight } = windowOffset
+  const { innerWidth, innerHeight } = windowOffset;
 
-  const xSpring = useSpring(x, {stiffness: 100, damping: 10})
-  const ySpring = useSpring(y, {stiffness: 100, damping: 10})
+  const xSpring = useSpring(x, { stiffness: 100, damping: 10 });
+  const ySpring = useSpring(y, { stiffness: 100, damping: 10 });
 
-  const rotateY = useTransform(xSpring, [0, innerWidth], [-30, 30])
-  const rotateX = useTransform(ySpring, [0, innerHeight], [-10, -50])
+  const rotateY = useTransform(xSpring, [0, innerWidth], [-30, 30]);
+  const rotateX = useTransform(ySpring, [0, innerHeight], [-10, -50]);
 
   return (
-    <div 
-      className="h-screen grid place-items-center" 
-      onMouseMove={handleMouseMove} 
+    <div
+      className="h-screen grid place-items-center"
+      onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
     >
       <div>
-        <div className='flex flex-col items-center justify-center gap-y-3 font-light capitalize'>
-          <motion.div className='flex items-center justify-center' style={{
-            rotateX: mouseMove ? rotateX: 0, 
-            rotateY: mouseMove ? rotateY: 0, 
-            transition: '0.1s',
+        <div className="flex flex-col items-center justify-center gap-y-3 font-light capitalize">
+          <motion.div
+            className="flex items-center justify-center"
+            style={{
+              rotateX: mouseMove ? rotateX : 0,
+              rotateY: mouseMove ? rotateY : 0,
+              transition: "0.1s",
             }}
-            >  
-            <Image src={'/heroPage.png'}
-            alt='Person Image' 
-            width={400} 
-            height={400} 
-            priority={true}
-            className='h-auto w-[300px]'
+          >
+            <Image
+              src={"/heroPage.png"}
+              alt="Person Image"
+              width={400}
+              height={400}
+              priority={true}
+              className="h-auto w-[300px]"
             />
-            <motion.span 
-              className='absolute text-3xl font-semibold text-white' 
-              initial={{scale:0}} 
+            <motion.span
+              className="absolute text-3xl font-semibold text-black"
+              initial={{ scale: 0 }}
               animate={{
-                opacity: buttonHover ? 0 : 1, 
-                scale: buttonHover ? 2 : 0, 
-                y: buttonHover ? -40: 0
+                opacity: buttonHover ? 0 : 1,
+                scale: buttonHover ? 2 : 0,
+                y: buttonHover ? -40 : 0,
               }}
               transition={{
-                opacity: {delay: 0.4 }}}
+                opacity: { delay: 0.4 },
+              }}
             >
-                  Hi
+              Boo!👻
             </motion.span>
           </motion.div>
-          <h1 className='text-center text-3xl font-bold tracking-wider text-gray-500'>My name is Darren Lee &</h1>
-          <p className='text-lg tracking-wider text-gray-700'>I like Coding😊</p>
+          <h1 className="text-center text-3xl font-bold tracking-wider text-gray-500">
+            My name is Darren Lee &
+          </h1>
+          <p className="text-lg tracking-wider text-gray-700">
+            I'm a developer who loves turning ideas into code.😊
+          </p>
         </div>
-        <div className='mt-8 flex justify-center gap-x-10 text-3xl text-yellow-600'>
-          {heroIcons.map((icon, i) =>(
-            <a href="#" key={i} className='rounded-lg hover:bg-red-400 hover:text-white transition-colors'>{icon}</a>
+        <div className="mt-8 flex justify-center gap-x-10 text-3xl text-yellow-600">
+          {heroIcons.map((icon, i) => (
+            <a
+              href="#"
+              key={i}
+              className="rounded-lg hover:bg-red-400 hover:text-white transition-colors"
+            >
+              {icon}
+            </a>
           ))}
-  
         </div>
-        <a 
-          href="#" 
-          className='mx-auto mt-7 block w-max rounded-lg bg-red-400 px-3 py-1 font-light capitalize tracking-wider text-white hover:bg-red-500 transition-colors'
+        <a
+          href="#"
+          className="mx-auto mt-7 block w-max rounded-lg bg-red-400 px-3 py-1 font-light capitalize tracking-wider text-white hover:bg-red-500 transition-colors"
           onMouseEnter={() => setButtonHover(true)}
-          onMouseLeave={() => setButtonHover(false)} 
+          onMouseLeave={() => setButtonHover(false)}
         >
-            Talk to me
+          Talk to me
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

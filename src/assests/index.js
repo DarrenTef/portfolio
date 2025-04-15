@@ -58,53 +58,59 @@ export const aboutText =
 export const experienceData = [
   {
     year: 1,
-    title: 'Foundation and Basics',
+    title: 'Academic Foundation & Exploration',
     education:
-      'High School Diploma: Focus on computer science, mathematics, and art/design courses.',
+      'University of California, Santa Cruz – B.S. in Computer Science (Fall 2021).',
     experience: [
-      'Basic HTML/CSS: Learn through online tutorials and courses.',
-      'Personal Projects: Create simple personal websites or blogs.',
+      '• Completed foundational CS courses in programming and discrete math.',
+      '• Started personal projects using Python, HTML/CSS, and Scratch.',
+      '• Explored early AI/ML concepts through coursework and self-study.',
     ],
   },
   {
     year: 2,
-    title: 'Advanced Learning and Early Experience',
-    education:
-      'Associate’s Degree in Web Development or Design: Enroll in a 2-year program covering web development and design principles.',
+    title: 'Core Computer Science and Independent Learning',
+    education: 'Progressed through core CS coursework and personal projects.',
     experience: [
-      'Freelance Work: Take on small freelance projects to build a portfolio.',
-      'Online Courses and Certifications: Learn JavaScript, responsive design, and UX/UI design.',
+      '• Completed data structures and algorithms courses.',
+      '• Developed skills in front-end development with JavaScript and React.',
+      '• Began learning machine learning (ML) using Python and scikit-learn.',
     ],
   },
   {
     year: 3,
-    title: 'Specialized Education and Real-World Application',
-    education:
-      'Online Courses and Bootcamps: Focus on specialized areas like front-end frameworks (React, Angular) and back-end technologies (Node.js).',
+    title: 'Team Projects and Full-Stack Development',
+    education: 'Applied skills in real-world projects with a focus on app development.',
     experience: [
-      'Internships: Secure internships with tech companies or design agencies.',
-      'Contribute to Open Source: Collaborate on open-source projects.',
+      '• Developed a Full-Stack Slack Web App with React Native, Node.js, and PostgreSQL.',
+      '• Practiced test-driven development and maintained 100% code coverage.',
+      '• Started side projects exploring LSTM for sentiment analysis and AI/ML applications.',
     ],
   },
   {
     year: 4,
-    title: 'Building Expertise and Expanding Skills',
-    education: 'Certifications: Obtain certifications in advanced web technologies.',
+    title: 'AI Integration and Leadership in Development',
+    education: 'Completed B.S. in Computer Science (Fall 2024).',
     experience: [
-      'Full-Time Position: Work as a junior web developer or designer.',
-      'Portfolio Development: Continuously update your portfolio with professional and personal projects.',
+      '• Developed a mobile app using React Native, Firebase, and MLKit for OCR.',
+      '• Led a team of 5 in both Software Development and Product Ownership roles.',
+      '• Improved OCR runtime performance by 600% through research and optimization.',
+      '• Worked with ML models to process data and implement real-time document scanning.',
     ],
   },
   {
     year: 5,
-    title: 'Mastery and Leadership',
-    education: 'Workshops and Conferences: Attend industry events to stay updated.',
+    title: 'Teaching, Mentorship, and Continued AI Growth',
+    education: 'Post-grad role focused on education and mentoring.',
     experience: [
-      'Senior Position: Aim for a senior web developer or lead designer role, mentoring junior colleagues.',
-      'Freelance and Consulting: Consider starting a freelance business or consulting practice.',
+      '• Code Coach at theCoderSchool, teaching Python, JavaScript, HTML/CSS, and Scratch.',
+      '• Adapted teaching methods to various learning styles and mentored students on logic and problem-solving.',
+      '• Continued self-study and side projects in AI/ML topics, including neural networks and computer vision.',
     ],
   },
-]
+];
+
+
 
 // Skills
 export const skillsData = [
