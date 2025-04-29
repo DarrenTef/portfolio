@@ -6,11 +6,11 @@ import { aboutData, aboutText, downloadIcon, arrowLeftIcon } from "@/assests";
 
 const About = () => {
   return (
-    <div className="min-h-screen px-96 flex-col items-center justify-center">
+    <div id="about" className="min-h-screen flex-col items-center justify-center">
       <div className="flex justify-center">
         <Heading text={"About Me"} />
       </div>
-      <div className="w-full flex items-center justify-between md:justify-center">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-y-10 px-4">
         <Image
           src={"/about.png"}
           alt="About Image"
@@ -19,11 +19,11 @@ const About = () => {
           //   className="w-[300px] lg:w-[200px] md:hidden"
           className="hidden md:block w-[300px] lg:w-[200px]"
         />
-        <div className="relative max-w-[800px] rounded-xl bg-zinc-100 p-5 text-justify">
-          <span className="absolute -left-5 top-20 scale-[2.5] text-zinc-100">
+        <div className="relative w-full max-w-[800px] md:max-w-[90%] sm-max-w-full rounded-xl bg-zinc-100 p-5 text-justify dark:bg-zinc-700 transition-colors">
+          <span className="absolute -left-5 top-20 scale-[2.5] text-zinc-100 dark:text-zing-700 transition-colors">
             {arrowLeftIcon}
           </span>
-          <p className="text-lg font-light text-gray-700 first-letter:pl-3 lg:text-[16px] sm:text-[14px]">
+          <p className="text-lg font-light text-gray-700 first-letter:pl-3 lg:text-[16px] sm:text-[14px] dark:text-white">
             {aboutText}
           </p>
           <a

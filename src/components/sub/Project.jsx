@@ -1,26 +1,40 @@
 "use client";
 import Image from "next/image";
 import Heading from "./Heading";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-const Project = () => {
+const Project = ({ data, index }) => {
+  const [show, setShow] = useState(false);
   return (
-    <div className="relative w-[350px] sm:w-full h-max border border-yellow-400 rounded-lg cursor-pointer">
+    <motion.div
+      initial={{ opacity: 0, y: index % 2 == 0 ? 100 : -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, type: "spring", stiffness: 100 }}
+      onClick={() => setShow((show) => !show)}
+      className="relative w-[350px] sm:w-full h-max border border-yellow-400 rounded-lg cursor-pointer"
+    >
       <Image
-        src={"/projects/image-1.jpg"}
+        src={data.url}
         alt="Project Image"
         width={400}
         height={400}
         className="rounded-lg opacity-70"
       />
-      <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center gap-y-2 bg-white/95 rounded-lg hidden">
-        <h2 className="text-lg font-bold tracking-wide text-gray-500">
-          SparkleGrove.com
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: show ? 1 : 0 }}
+        className="absolute top-0 w-full h-full flex flex-col items-center justify-center gap-y-2 bg-white/95 p-6 rounded-lg dark:bg-zinc-700/95 transition-colors"
+      >
+        <h2 className="text-lg font-bold tracking-wide text-gray-500 dark:text-white hover:text-yellow-500 hover:scale-105 transition-colors">
+          <a href={`${data.link}`}>{data.name}</a>
         </h2>
-        <p className="text-justify text-gray-500 first-letter:pl-2">
-          Description
+        <p className="text-justify text-gray-500 first-letter:pl-2 dark:text-gray-100 transition-colors">
+          {data.desc}
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

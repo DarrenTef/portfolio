@@ -17,26 +17,27 @@ const Experience = () => {
   const scrollY = useSpring(scrollYProgress, { stiffness: 200, damping: 20 });
 
   return (
-    <div className="relative py-20 px-96">
+    <div id="experience" className="relative py-20">
       <div className="flex justify-center">
         <Heading text={"Experience & Education"} />
       </div>
-      <div className="relative w-[300px] h-[300px]">
+      <div className="relative py-20">
         <Image
           src="/education.png"
           alt="Illustration showing experience and education"
-          fill
-          className="object-contain"
+          height={400}
+          width={400}
+          className="absolute -top-4 right-0 opacity-90 hidden xl:block"
         />
       </div>
       <div
         ref={containerRef}
-        className="w-full h-full flex flex-col items-center justify-center gap-y-10 lg:gap-y-20 py-10"
+        className="relative w-full flex flex-col items-center justify-center gap-y-10 lg:gap-y-20 py-10"
       >
         {experienceData.map((data, i) => (
           <div
             key={`id-${i}`}
-            className={`w-[600px] xl:w-[480px] sm:w-full px-12 sm:px-0 relative z-10 ${
+            className={`w-[600px] xl:w-[480px] sm:w-full px-12 sm:px-0 relative z-10 xl:translate-x-0 xl:self-auto${
               i % 2 == 0
                 ? "-left-[400px] xl:-left-[300px] lg:-left-0"
                 : "left-[400px] xl:left-[300px] lg:left-0"
@@ -47,18 +48,18 @@ const Experience = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, type: "spring", stiffness: 50 }}
               viewport={{ once: true }}
-              className=" relative flex flex-col gap-y-3 rounded-md border border-red-300 bg-white p-4 tracking-wide sm:text-sm"
+              className=" relative flex flex-col gap-y-3 rounded-md border border-red-300 bg-white p-4 tracking-wide sm:text-sm dark:bg-zinc-700 transition-colors z-20"
             >
-              <h1 className="text-xl sm:text-lg font-bold text-gray-700">
+              <h1 className="text-xl sm:text-lg font-bold text-gray-700 dark:text-white">
                 {data.title}
               </h1>
-              <p className="text-gray-800">
+              <p className="text-gray-800 dark:text-gray-100">
                 <span className="block font-light">Education:</span>
                 <span className="block pl-2 font-extralight">
                   {data.education}
                 </span>
               </p>
-              <div className="text-gray-800">
+              <div className="text-gray-800 dark:text-gray-200 transition-colors">
                 <span className="font-light">Experience:</span>
                 <ul className="pl-2">
                   {data.experience.map((exp, j) => (
@@ -70,7 +71,7 @@ const Experience = () => {
               </div>
               {/* The 2020 Div and Icon span are modified on my own */}
               <span
-                className={`absolute top-20 text-red-300 -translate-y-1/2 ${
+                className={`absolute top-20 text-red-300 -translate-y-1/2 hidden xl:block ${
                   i % 2 == 0 ? "left-full rotate-180" : "right-full"
                 }`}
               >
@@ -79,11 +80,11 @@ const Experience = () => {
             </motion.div>
             <div
               className={`w-14 absolute top-20 border border-gray-300 rounded-full aspect-square
-                 grid place-items-center text-red-400 font-light -translate-y-1/2 z-10 bg-white ${
-                   i % 2 === 0
-                     ? "left-[calc(100%+100px)] lg:left-[106.5%]"
-                     : "right-[calc(100%+100px)] lg:right-[106.5%]"
-                 }`}
+                hidden xl:grid place-items-center text-red-400 font-light -translate-y-1/2 z-10 bg-white ${
+                  i % 2 === 0
+                    ? "left-[calc(100%+100px)] xl:left-[106.5%]"
+                    : "right-[calc(100%+100px)] xl:right-[106.5%]"
+                }`}
             >
               {date - experienceData.length + i + 1}
             </div>
@@ -92,8 +93,9 @@ const Experience = () => {
 
         <motion.div
           initial={{ scaleY: 0 }}
-          style={{ scaleY: scrollY }}
-          className="absolute top-35 w-1 h-full rounded-full bg-gray-300 origin-top"
+          style={{ scaleY: scrollY, height: "calc(100% - 30px)" }}
+          className="absolute left-1/2 top-0 w-[2px] -translate-x-1/2 bg-gray-300 origin-top z-0 
+    h-[200px] sm:h-[300px] md:h-[350px] lg:h-[600px]"
         ></motion.div>
       </div>
     </div>
