@@ -232,6 +232,13 @@ export const funFacts = [
 // Projects
 export const projectsData = [
   {
+    name: "Awesome Receipt App",
+    link: "https://github.com/DarrenTef/ReceiptApp",
+    desc: "React Native receipt app for android that takes a picture of a receipt and splits it accordingly amongst a group of people.",
+    url: "/projects/portfolio_img2.png",
+    tech: ["TypeScript", "CSS", "ReactJS", "JavaScript"],
+  },
+  {
     name: "DSA and Systems Programming",
     link: "https://github.com/DarrenTef/class_projects",
     desc: "Instrumental courses in shaping my understanding of programming, algorithms, and systems-level concepts.",
@@ -259,13 +266,6 @@ export const projectsData = [
       "HTML",
       "CSS",
     ],
-  },
-  {
-    name: "Awesome Receipt App",
-    link: "https://github.com/DarrenTef/ReceiptApp",
-    desc: "React Native receipt app for android that takes a picture of a receipt and splits it accordingly amongst a group of people.",
-    url: "/projects/portfolio_img2.png",
-    tech: ["TypeScript", "CSS", "ReactJS", "JavaScript"],
   },
   {
     name: "Distributed Systems Projects",
