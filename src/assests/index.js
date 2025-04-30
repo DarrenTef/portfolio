@@ -1,18 +1,23 @@
 // Centralized place to store all our setting data including icons
 // Hero
 import InstagramLineIcon from "remixicon-react/InstagramLineIcon";
-import FacebookCircleLineIcon from "remixicon-react/FacebookCircleLineIcon";
-import DribbbleLineIcon from "remixicon-react/DribbbleLineIcon";
-import YoutubeLineIcon from "remixicon-react/YoutubeLineIcon";
+import LinkedinBoxLineIcon from "remixicon-react/LinkedinBoxLineIcon";
 import GithubLineIcon from "remixicon-react/GithubLineIcon";
 
 /* eslint-disable react/jsx-key */
 export const heroIcons = [
-  <InstagramLineIcon />,
-  <FacebookCircleLineIcon />,
-  <DribbbleLineIcon />,
-  <YoutubeLineIcon />,
-  <GithubLineIcon />,
+  {
+    icon: <LinkedinBoxLineIcon />,
+    link: "https://www.linkedin.com/in/darren-lee181/",
+  },
+  {
+    icon: <GithubLineIcon />,
+    link: "https://github.com/DarrenTef",
+  },
+  {
+    icon: <InstagramLineIcon />,
+    link: "https://www.instagram.com/dare_bere_/",
+  },
 ];
 
 // About Me
@@ -239,6 +244,13 @@ export const projectsData = [
     tech: ["TypeScript", "CSS", "ReactJS", "JavaScript"],
   },
   {
+    name: "Slack Inspired Clone",
+    link: "https://github.com/DarrenTef/ReceiptApp",
+    desc: "Developed a responsive Slack-like app with React.js and MUI, using Test-Driven Development (TDD) and Puppeteer to achieve 100% coverage across unit, integration, and end-to-end tests.",
+    url: "/projects/",
+    tech: ["TypeScript", "CSS", "ReactJS", "JavaScript"],
+  },
+  {
     name: "DSA and Systems Programming",
     link: "https://github.com/DarrenTef/class_projects",
     desc: "Instrumental courses in shaping my understanding of programming, algorithms, and systems-level concepts.",
@@ -291,7 +303,7 @@ export const projectsButton = [
   "FramerMotion",
   "MUI",
   "Firebase",
-  "Docker"
+  "Docker",
 ];
 
 export const pricingPlans = [
@@ -311,7 +323,7 @@ export const pricingPlans = [
   },
   {
     title: "Intensive",
-    pricing: "$1,000+",
+    pricing: "$750+",
     features: [
       "Custom schedule (3+ sessions/week)",
       "1-on-1 mentorship or focused 2-on-1 partner learning",

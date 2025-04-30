@@ -103,11 +103,11 @@ const Hero = () => {
         >
           {heroIcons.map((icon, i) => (
             <a
-              href="#"
+              href={`${icon.link}`}
               key={i}
               className="rounded-lg hover:bg-red-400 hover:text-white transition-colors"
             >
-              {icon}
+              {icon.icon}
             </a>
           ))}
         </motion.div>
