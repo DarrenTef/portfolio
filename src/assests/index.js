@@ -245,17 +245,17 @@ export const projectsData = [
   },
   {
     name: "Slack Inspired Clone",
-    link: "https://github.com/DarrenTef/ReceiptApp",
+    link: "https://github.com/DarrenTef/SlackLikeClone",
     desc: "Developed a responsive Slack-like app with React.js and MUI, using Test-Driven Development (TDD) and Puppeteer to achieve 100% coverage across unit, integration, and end-to-end tests.",
-    url: "/projects/",
-    tech: ["TypeScript", "CSS", "ReactJS", "JavaScript"],
+    url: "/projects/portfolio_img8.jpg",
+    tech: ["JavaScript", "CSS", "ReactJS", "Docker", "MUI"],
   },
   {
     name: "DSA and Systems Programming",
     link: "https://github.com/DarrenTef/class_projects",
     desc: "Instrumental courses in shaping my understanding of programming, algorithms, and systems-level concepts.",
     url: "/projects/portfolio_img5.png",
-    tech: ["C", "C++"],
+    tech: ["C/C++"],
   },
   {
     name: "Cover Letter Generator",
@@ -276,7 +276,6 @@ export const projectsData = [
       "FramerMotion",
       "TailwindCSS",
       "HTML",
-      "CSS",
     ],
   },
   {

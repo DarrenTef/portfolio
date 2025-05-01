@@ -25,7 +25,7 @@ const Projects = () => {
       <div className="flex justify-center">
         <Heading text={"Projects"} />
       </div>
-      <div className="flex flex-wrap items-center justify-between gamotion.p-4 py-10">
+      <div className="flex flex-wrap items-center justify-center gap-4 py-10">
         {projectsButton.map((items, i) => (
           <motion.button
             key={i}

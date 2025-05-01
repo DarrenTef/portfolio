@@ -23,7 +23,7 @@ const Skills = () => {
       <div className="flex justify-center">
         <Heading text={"Skills"} />
       </div>
-      <div className="w-full flex justify-between flex-wrap gap-x-8 gap-y-10 lg:gap-y-6">
+      <div className="w-full flex justify-center flex-wrap gap-x-8 gap-y-10 lg:gap-y-6">
         {skillsData.map((item, i) => (
           <motion.div
             custom={i}
