@@ -30,7 +30,7 @@ const Project = ({ data, index }) => {
         <h2 className="text-lg font-bold tracking-wide text-gray-500 dark:text-white hover:text-yellow-500 hover:scale-105 transition-colors">
           <a href={`${data.link}`}>{data.name}</a>
         </h2>
-        <p className="text-justify text-gray-500 first-letter:pl-2 dark:text-gray-100 transition-colors">
+        <p className="text-center text-gray-500 first-letter:pl-2 dark:text-gray-100 transition-colors">
           {data.desc}
         </p>
       </motion.div>

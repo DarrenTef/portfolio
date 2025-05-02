@@ -79,7 +79,7 @@ export const experienceData = [
     experience: [
       "• Completed data structures and algorithms courses.",
       "• Developed skills in front-end development with JavaScript and React.",
-      "• Began learning machine learning (ML) using Python and scikit-learn.",
+      "• Began learning Machine Learning (ML) using Python and scikit-learn.",
     ],
   },
   {
